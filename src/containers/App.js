@@ -22,7 +22,7 @@ class App extends Component {
       dispatch(setPosition(latitude, longitude))
     }, () => {
 
-      console.log('Can\'t get position...')
+      document.getElementById('renderedAddress').value = 'Unable to find geo-position'
     });
   }
 
@@ -59,7 +59,7 @@ class App extends Component {
           <div className="form-group">
               <input placeholder='Enter Address' className="form-control" id='address' tabindex='1' onKeyPress={this.handleKeyPress} />
               <br />
-              <h4>{foundAddress === '' ? 'Current Location' : foundAddress}</h4>
+              <h4 id='renderedAddress'>{foundAddress === '' ? ' ' : foundAddress}</h4>
               <br />
               <button tabindex='2' className="btn btn-primary" onClick={this.handleAddressEntered}>Submit</button>
           </div>
