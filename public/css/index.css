@@ -1,0 +1,20 @@
+.wrapper{
+    width: 1000px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.forecast-detail div {
+    text-align: center;
+    padding: 20px;
+    width: 25%;
+    float: left;
+}
+
+footer {
+    bottom: 0;
+    height: 100px;
+    left: 0;
+    position: absolute;
+    width: 100%;
+}
