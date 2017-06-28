@@ -32,7 +32,7 @@ spec:
         imagePullPolicy: IfNotPresent
         name: ui
         ports:
-        - containerPort: 80
+        - containerPort: 5000
       dnsPolicy: ClusterFirst
       imagePullSecrets:
       - name: quayregistrykey
