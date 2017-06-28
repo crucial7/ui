@@ -35,7 +35,7 @@ export const receiveLocation = (address, json) => ({
 export const setPosition = (lat, long) => dispatch => {
     let address = 'Current Location'
     dispatch(selectAddress(address))
-    return fetch(`http://localhost:3003/weather/${lat}/${long}/${Math.round((new Date()).valueOf()/1000)}`)
+    return fetch(`http://proxy.sheriff.io/weather/${lat}/${long}/${Math.round((new Date()).valueOf()/1000)}`)
       .then(response => response.json())
       .then(json => {
           console.log('setPosweather:', json);
@@ -46,12 +46,12 @@ export const setPosition = (lat, long) => dispatch => {
 
 const fetchForecasts = address => dispatch => {
     dispatch(requestForecast(address))
-    return fetch(`http://localhost:3003/latlong/${address}`)
+    return fetch(`http://proxy.sheriff.io/latlong/${address}`)
       .then(response => response.json())
       .then(json => {
           console.log('latlong:', json);
           dispatch(receiveLocation(address, json))
-        return fetch(`http://localhost:3003/weather/${json.Lat}/${json.Long}/${Math.round((new Date()).valueOf()/1000)}`)
+        return fetch(`http://proxy.sheriff.io/weather/${json.Lat}/${json.Long}/${Math.round((new Date()).valueOf()/1000)}`)
           .then(response => response.json())
           .then(json => {
               console.log('weather:', json);
