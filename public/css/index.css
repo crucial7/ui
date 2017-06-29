@@ -1,5 +1,5 @@
 @media screen and (min-width: 1000px) {
-    .wrapper{
+    body {
         width: 1000px;
         margin: 0 auto;
         text-align: center;
@@ -14,8 +14,8 @@
 }
 
 @media screen and (max-width: 999px) {
-    .wrapper{
-        width: 100%;
+    body {
+        width: 85%;
         margin: 0 auto;
         text-align: center;
     }
@@ -39,4 +39,8 @@ footer {
 
 footer img {
     float: right;
+}
+
+footer a {
+    float: left;
 }
