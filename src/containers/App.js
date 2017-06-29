@@ -14,17 +14,17 @@ class App extends Component {
     foundAddress: PropTypes.string.isRequired
   }
 
-  componentWillMount() {
-    navigator.geolocation.getCurrentPosition((position) => {
-      let {latitude, longitude} = position.coords
-      console.log('lat/long', latitude, longitude)
-      const { dispatch } = this.props
-      dispatch(setPosition(latitude, longitude))
-    }, () => {
-
-      document.getElementById('renderedAddress').value = 'Unable to find geo-position'
-    });
-  }
+  // componentWillMount() {
+  //   navigator.geolocation.getCurrentPosition((position) => {
+  //     let {latitude, longitude} = position.coords
+  //     console.log('lat/long', latitude, longitude)
+  //     const { dispatch } = this.props
+  //     dispatch(setPosition(latitude, longitude))
+  //   }, () => {
+  //
+  //     console.log('Unable to find geo-position')
+  //   });
+  // }
 
   componentWillReceiveProps(nextProps) {
     if (nextProps.enteredAddress !== this.props.enteredAddress) {
@@ -57,11 +57,11 @@ class App extends Component {
       <div>
           <br />
           <div className="form-group">
-              <input placeholder='Enter Address' className="form-control" id='address' tabindex='1' onKeyPress={this.handleKeyPress} />
+              <input placeholder='Enter an address...' className="form-control" id='address' tabIndex='1' onKeyPress={this.handleKeyPress} />
               <br />
               <h4 id='renderedAddress'>{foundAddress === '' ? ' ' : foundAddress}</h4>
               <br />
-              <button tabindex='2' className="btn btn-primary" onClick={this.handleAddressEntered}>Submit</button>
+              <button tabIndex='2' className="btn btn-primary" onClick={this.handleAddressEntered}>Submit</button>
           </div>
 
           {isEmpty
