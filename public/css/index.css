@@ -36,3 +36,7 @@ footer {
     width: 100%;
     clear: both;
 }
+
+footer img {
+    float: right;
+}
