@@ -81,7 +81,7 @@ const mapStateToProps = state => {
     items: forecasts,
     foundAddress
   } = forecastsViaApi[enteredAddress] || {
-    isFetching: true,
+    isFetching: '',
     items: []
   }
 
