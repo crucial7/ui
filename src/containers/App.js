@@ -57,7 +57,7 @@ class App extends Component {
       <div>
           <br />
           <div className="form-group">
-              <input placeholder='Enter an address...' className="form-control" id='address' tabIndex='1' onKeyPress={this.handleKeyPress} />
+              <input placeholder='Arcus is awesome...' className="form-control" id='address' tabIndex='1' onKeyPress={this.handleKeyPress} />
               <br />
               <h4 id='renderedAddress'>{foundAddress === '' ? ' ' : foundAddress}</h4>
               <br />
